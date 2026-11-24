@@ -1,3 +1,5 @@
+import time
+
 class Restaurant:
     """Hold the info of tables"""
 
@@ -10,17 +12,28 @@ class Restaurant:
         
 
 class Table:
-    """List of open tables, with the table number and
-    how many persons seated"""
+    """One restaurant table with its number, guests and orders"""
 
-
-    def __init__(self, table_number, how_many_person):
+    def __init__(self, table_number, guests):
         self.table_number = table_number
-        self.how_many_person = how_many_person
+        self.how_many_person = guests
         self.orders = []
 
-    def add_table(self, table):
-        self.tables.append(table)
+class Display:
+    """All function regarding to display text for user"""
+
+    @staticmethod
+    def display_menu():
+        time.sleep(1)
+        print("\n*** SHAPINATOR MENU ***")
+        print("1. Open a table\n\
+2. Show open table\n\
+3. Exit\n")
+
+    def get_user_choice():
+        choice = input("Please choose 1, 2 or 3\n")
+        return choice
+
 
 r = Restaurant('My Place')
 t1 = Table(1, 4)
