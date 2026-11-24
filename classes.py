@@ -16,16 +16,19 @@ class Table:
 
     def __init__(self, table_number, guests):
         self.table_number = table_number
-        self.how_many_person = guests
+        self.guests = guests
         self.orders = []
 
+    def __str__(self):
+        return f'Table {self.table_number} with {self.guests} guests'
+    
 class Display:
     """All function regarding to display text for user"""
 
     @staticmethod
     def display_menu():
-        time.sleep(1)
-        print("\n*** SHAPINATOR MENU ***")
+        time.sleep(5)
+        print("\n*** My Place  ***")
         print("1. Open a table\n\
 2. Show open table\n\
 3. Exit\n")
@@ -34,15 +37,6 @@ class Display:
         choice = input("Please choose 1, 2 or 3\n")
         return choice
 
-
-r = Restaurant('My Place')
-t1 = Table(1, 4)
-t2 = Table(2, 2)
-
-r.add_table(t1)
-r.add_table(t2)
-
-print(len(r.tables))
 
 # class Ordering:
 #     """Here it keeps the data of ordering"""
