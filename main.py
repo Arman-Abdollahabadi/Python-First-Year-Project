@@ -18,7 +18,13 @@ def main():
             restaurant.add_table(new_table)
             print(f'{new_table} opened')
         elif choice == '2':
-            pass
+            if len(restaurant.tables) != 0:
+                print('Open tables:')
+                for tables in restaurant.tables:
+                    print(f'{tables}')
+            else:
+                print('No open table')
+
         elif choice == '3':
             print('Exit, have a nice shift')
             play = False
